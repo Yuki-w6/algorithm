@@ -1,28 +1,10 @@
-version: '3.8'
-
 services:
-  workspace:
-    build:
-      context: ./dockerfiles/workspace
-      dockerfile: Dockerfile
-    volumes:
-      - ./:/mnt
-      - vscext:/home/developer/.vscode-server/extensions
-    networks:
-      - default
-      - bonet
-
   cpp:
     build:
       context: ./dockerfiles/cpp
       dockerfile: Dockerfile
     volumes:
-      - ./:/mnt
-    networks:
-      - bonet
+      - ./:/cpp
 
 volumes:
   vscext:
-networks:
-  bonet:
-    external: true

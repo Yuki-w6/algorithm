@@ -6,7 +6,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 # タイムゾーンを日本に設定
 ENV TZ=Asia/Tokyo
 
-WORKDIR /mnt
+WORKDIR /cpp
 
 # 必要なパッケージリストを更新、インストール
 RUN apt-get update && \

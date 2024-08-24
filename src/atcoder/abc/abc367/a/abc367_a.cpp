@@ -8,18 +8,10 @@ using P = pair<int, int>;
 
 int main()
 {
-    int a, b;
-    cin >> a >> b;
+    int n;
+    cin >> n;
 
     int ans = 0;
-    for (int i = 1; i < 10; i++)
-    {
-        if (i != a + b)
-        {
-            ans = i;
-            break;
-        }
-    }
 
     cout << ans << endl;
     return 0;
