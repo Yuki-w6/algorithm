@@ -7,17 +7,11 @@ using ll = long long;
 
 int main()
 {
-    int n, t, a;
-    cin >> n >> t >> a;
+    int n;
+    cin >> n;
 
-    if (t > n / 2 || a > n / 2)
-    {
-        cout << "Yes" << endl;
-    }
-    else
-    {
-        cout << "No" << endl;
-    }
+    int ans = 0;
 
+    cout << ans << endl;
     return 0;
 }

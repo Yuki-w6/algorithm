@@ -1,17 +1,16 @@
-#include <bits/stdc++.h>
-#include <atcoder/all>
+#include <iostream>
 using namespace std;
-using namespace atcoder;
-#define rep(i, n) for (int i = 0; i < (int)(n); i++)
-using ll = long long;
-
-int main()
+int main(void)
 {
-    int n;
-    cin >> n;
+    // 自分の得意な言語で
+    // Let's チャレンジ！！
+    int N, X, F, S;
+    cin >> N >> X >> F >> S;
 
-    int ans = 0;
+    int hr = 0;
+    while (N > 0)
+    {
+    }
 
-    cout << ans << endl;
     return 0;
 }
