@@ -4,7 +4,7 @@
       {
           "label": "abc_dl",
           "type": "shell",
-          "command": "${workspaceFolder}/cmd/abc_dl.sh ${input:abc_dl}",
+          "command": "sh ${workspaceFolder}/cmd/abc_dl.sh ${input:abc_dl}",
           "presentation": {
               "reveal": "always",
               "focus": true,
@@ -14,7 +14,7 @@
       {
           "label": "arc_dl",
           "type": "shell",
-          "command": "${workspaceFolder}/cmd/arc_dl.sh ${input:arc_dl}",
+          "command": "sh ${workspaceFolder}/cmd/arc_dl.sh ${input:arc_dl}",
           "presentation": {
               "reveal": "always",
               "focus": true,
