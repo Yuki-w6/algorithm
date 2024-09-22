@@ -34,8 +34,9 @@ int main()
         int x;
         char c;
         cin >> x >> c;
+        x--;
 
-        if (s[x - 1] == c)
+        if (s[x] == c)
         {
             cout << count << endl;
             continue;
@@ -43,48 +44,51 @@ int main()
 
         if (c == 'A')
         {
-            if (x == 1)
+            if (x == 0)
             {
-                cout << count << endl;
-            }
-            else if (x == 2)
-            {
-                if (s[x - 2] == 'A' && s[x - 1] == 'B' && s[x] == 'C')
-                {
-                    count--;
-                }
-                else if (s[x] == 'B' && s[x + 1] == 'C')
+                if (s[x] != 'A' && s[x + 1] == 'B' && s[x + 2] == 'C')
                 {
                     count++;
                 }
             }
-            else if (x < n - 1)
+            else if (x == 1)
             {
-                if (s[x - 2] == 'A' && s[x - 1] == 'B' && s[x] == 'C')
+                if (s[x - 1] == 'A' && s[x] == 'B' && s[x + 1] == 'C')
                 {
                     count--;
                 }
-                else if (s[x - 3] == 'A' && s[x - 2] == 'B' && s[x - 1] == 'C')
-                {
-                    count--;
-                }
-                else if (s[x] == 'B' && s[x + 1] == 'C')
+                if (s[x] != 'A' && s[x + 1] == 'B' && s[x + 2] == 'C')
                 {
                     count++;
+                }
+            }
+            else if (x < n - 2)
+            {
+                if (s[x - 1] == 'A' && s[x] == 'B' && s[x + 1] == 'C')
+                {
+                    count--;
+                }
+                else if (s[x - 2] == 'A' && s[x - 1] == 'B' && s[x] == 'C')
+                {
+                    count--;
+                }
+                if (s[x] != 'A' && s[x + 1] == 'B' && s[x + 2] == 'C')
+                {
+                    count++;
+                }
+            }
+            else if (x == n - 2)
+            {
+                if (s[x - 1] == 'A' && s[x] == 'B' && s[x + 1] == 'C')
+                {
+                    count--;
+                }
+                else if (s[x - 2] == 'A' && s[x - 1] == 'B' && s[x] == 'C')
+                {
+                    count--;
                 }
             }
             else if (x == n - 1)
-            {
-                if (s[x - 2] == 'A' && s[x - 1] == 'B' && s[x] == 'C')
-                {
-                    count--;
-                }
-                else if (s[x - 3] == 'A' && s[x - 2] == 'B' && s[x - 1] == 'C')
-                {
-                    count--;
-                }
-            }
-            else if (x == n)
             {
                 if (s[x - 2] == 'A' && s[x - 1] == 'B' && s[x] == 'C')
                 {
@@ -94,51 +98,53 @@ int main()
         }
         else if (c == 'B')
         {
-            if (x == 1)
+            if (x == 0)
             {
-                if (s[x - 1] == 'A' && s[x] == 'B' && s[x + 1] == 'C')
+                if (s[x] == 'A' && s[x + 1] == 'B' && s[x + 2] == 'C')
                 {
                     count--;
                 }
             }
-            else if (x == 2)
+            else if (x == 1)
             {
-                if (s[x - 2] == 'A' && s[x - 1] == 'B' && s[x] == 'C')
-                {
-                }
-                else if (s[x - 1] == 'A' && s[x] == 'B' && s[x + 1] == 'C')
+                if (s[x] == 'A' && s[x + 1] == 'B' && s[x + 2] == 'C')
                 {
                     count--;
                 }
-                else if (s[x - 2] == 'A' && s[x] == 'C')
+                if (s[x - 1] == 'A' && s[x] != 'B' && s[x + 1] == 'C')
                 {
                     count++;
                 }
             }
-            else if (x < n)
+            else if (x < n - 2)
             {
-                if (s[x - 2] == 'A' && s[x - 1] == 'B' && s[x] == 'C')
-                {
-                }
-                else if (s[x - 1] == 'A' && s[x] == 'B' && s[x + 1] == 'C')
+                if (s[x] == 'A' && s[x + 1] == 'B' && s[x + 2] == 'C')
                 {
                     count--;
                 }
-                else if (s[x - 3] == 'A' && s[x - 2] == 'B' && s[x - 1] == 'C')
+                else if (s[x - 2] == 'A' && s[x - 1] == 'B' && s[x] == 'C')
                 {
                     count--;
                 }
-                else if (s[x - 2] == 'A' && s[x] == 'C')
+                if (s[x - 1] == 'A' && s[x] != 'B' && s[x + 1] == 'C')
                 {
                     count++;
                 }
             }
-            else if (x == n)
+            else if (x == n - 2)
             {
+                if (s[x - 1] == 'A' && s[x] != 'B' && s[x + 1] == 'C')
+                {
+                    count++;
+                }
                 if (s[x - 2] == 'A' && s[x - 1] == 'B' && s[x] == 'C')
                 {
+                    count--;
                 }
-                else if (s[x - 3] == 'A' && s[x - 2] == 'B' && s[x - 1] == 'C')
+            }
+            else if (x == n - 1)
+            {
+                if (s[x - 2] == 'A' && s[x - 1] == 'B' && s[x] == 'C')
                 {
                     count--;
                 }
@@ -146,29 +152,53 @@ int main()
         }
         else if (c == 'C')
         {
-            if (x == 1)
+            if (x == 0)
+            {
+                if (s[x] == 'A' && s[x + 1] == 'B' && s[x + 2] == 'C')
+                {
+                    count--;
+                }
+            }
+            else if (x == 1)
             {
                 if (s[x - 1] == 'A' && s[x] == 'B' && s[x + 1] == 'C')
                 {
                     count--;
                 }
-            }
-            else if (x == 2)
-            {
-                if (s[x - 2] == 'A' && s[x - 1] == 'B' && s[x] == 'C')
-                {
-                }
-                else if (s[x - 1] == 'A' && s[x] == 'B' && s[x + 1] == 'C')
+                else if (s[x] == 'A' && s[x + 1] == 'B' && s[x + 2] == 'C')
                 {
                     count--;
                 }
             }
-            else
+            else if (x < n - 2)
             {
-                if (s[x - 3] == 'A' && s[x - 2] == 'B' && s[x - 1] == 'C')
+                if (s[x - 1] == 'A' && s[x] == 'B' && s[x + 1] == 'C')
                 {
+                    count--;
                 }
-                else if (s[x - 2] == 'A' && s[x] == 'C')
+                else if (s[x] == 'A' && s[x + 1] == 'B' && s[x + 2] == 'C')
+                {
+                    count--;
+                }
+                if (s[x - 2] == 'A' && s[x - 1] == 'B' && s[x] != 'C')
+                {
+                    count++;
+                }
+            }
+            else if (x == n - 2)
+            {
+                if (s[x - 1] == 'A' && s[x] == 'B' && s[x + 1] == 'C')
+                {
+                    count--;
+                }
+                if (s[x - 2] == 'A' && s[x - 1] == 'B' && s[x] != 'C')
+                {
+                    count++;
+                }
+            }
+            else if (x == n - 1)
+            {
+                if (s[x - 2] == 'A' && s[x - 1] == 'B' && s[x] != 'C')
                 {
                     count++;
                 }
@@ -176,9 +206,60 @@ int main()
         }
         else
         {
+            if (x == 0)
+            {
+                if (s[x] == 'A' && s[x + 1] == 'B' && s[x + 2] == 'C')
+                {
+                    count--;
+                }
+            }
+            else if (x == 1)
+            {
+                if (s[x - 1] == 'A' && s[x] == 'B' && s[x + 1] == 'C')
+                {
+                    count--;
+                }
+                else if (s[x] == 'A' && s[x + 1] == 'B' && s[x + 2] == 'C')
+                {
+                    count--;
+                }
+            }
+            else if (x < n - 2)
+            {
+                if (s[x - 1] == 'A' && s[x] == 'B' && s[x + 1] == 'C')
+                {
+                    count--;
+                }
+                else if (s[x] == 'A' && s[x + 1] == 'B' && s[x + 2] == 'C')
+                {
+                    count--;
+                }
+                else if (s[x - 2] == 'A' && s[x - 1] == 'B' && s[x] == 'C')
+                {
+                    count--;
+                }
+            }
+            else if (x == n - 2)
+            {
+                if (s[x - 1] == 'A' && s[x] == 'B' && s[x + 1] == 'C')
+                {
+                    count--;
+                }
+                else if (s[x - 2] == 'A' && s[x - 1] == 'B' && s[x] == 'C')
+                {
+                    count--;
+                }
+            }
+            else if (x == n - 1)
+            {
+                if (s[x - 2] == 'A' && s[x - 1] == 'B' && s[x] == 'C')
+                {
+                    count--;
+                }
+            }
         }
-
-        s[x - 1] = c;
+        s[x] = c;
+        cout << count << endl;
     }
 
     return 0;
