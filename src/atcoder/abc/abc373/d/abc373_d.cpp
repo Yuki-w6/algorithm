@@ -46,8 +46,8 @@ int main()
             {
                 dfs(dfs, e.to, val + e.w);
             }
-            dfs(dfs, i, 0);
         };
+        dfs(dfs, i, 0);
     }
 
     rep(i, n)
