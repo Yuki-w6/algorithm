@@ -11,7 +11,6 @@ int main()
     {
         cin >> a[i];
     }
-
     bool exist = false;
     for (int i = 0; i < N; ++i)
     {
